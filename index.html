@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="quiz">
+        <h1>Quiz</h1>
+        <h2 class="question1">Which one is correct team name in NBA?</h2>
+        <div class="answers"> <input type="radio" id="1opt1" name="options"> <span id="1optt1">New York Bulls</span></div>
+        <div class="answers"><input type="radio" id="1opt2" name="options"> <span id="1optt2">Los Angeles Kings</span></div>
+        <div class="answers"><input type="radio" id="1opt3" name="options"> <span id="1optt3">Golden State Warriros</span></div>
+        <div class="answers"><input type="radio" id="1opt3" name="options"> <span id="1optt3">Golden State Warriros</span></div>
+        <div class="answers"><input type="radio" id="1opt4" name="options"> <span id="1optt4">Huston Rocket</span></div>
+        <br><br>
+        <button class="saveBtn" onclick="saveAnswers()">Save Answers</button>
+    </div>
+    </div>
+
+    <script>
+        fetch('quiz.json').then(function (response) {
+            return response.json();
+        }).then(function (response) {
+            var pitanje = document.getElementsByClassName('question1');
+            console.log(pitanje);
+            var quiz = response.quiz;
+            console.log(quiz);
+            console.log(typeof (quiz));
+            // code for managing data    
+
+        });
+    </script>
+</body>
+
+</html>
